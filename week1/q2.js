@@ -4,8 +4,8 @@
 // 6 ([4, -1, 2, 1]의 합이 최대)
 
 const maxSequence = (arr) => {
-  let maxAt = 0
-  let result = 0
+  let maxAt = 0  // 배열의 현재 인덱스까지의 합 에서 제일 큰 값
+  let result = 0 // 그 중에 매번 최대값
   arr.forEach(num => {
     maxAt = Math.max(num, maxAt + num)
     result = Math.max(maxAt, result)
