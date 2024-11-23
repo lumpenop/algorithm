@@ -1,3 +1,5 @@
+// https://www.acmicpc.net/problem/8979
+
 const input = require('fs').readFileSync('./dev/stdin/index.txt').toString().trim().split('\n');
 const find = input[0].split(' ')[1]
 const arr = input.slice(1)
