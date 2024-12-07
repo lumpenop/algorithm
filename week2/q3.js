@@ -1,6 +1,8 @@
 // https://www.acmicpc.net/problem/9017
+// 크로스 컨트리 9017
 
 const input = require('fs').readFileSync('./dev/stdin/index.txt').toString().trim().split('\n');
+
 
 const arr = input.slice(1)
 let arr2 = arr.filter((_, index) => index % 2 !== 0)
@@ -11,7 +13,7 @@ const arr3 = arr2.map(item => {
   const setItem = new Set(splitItem)
   const newArr = [...setItem]
   newArr.forEach((element) => obj[element] = {index: element, score: 0, total: 0, five: []})
-  splitItem.forEach((element, index) => {
+  splitItem.forEach((element) => {
     obj[element].total++
   })
   const filtered = splitItem.filter((element) => obj[element].total >= 6)
@@ -20,8 +22,8 @@ const arr3 = arr2.map(item => {
     obj[element].five.push(index + 1)
   })
   filtered.forEach((element) => obj[element].score = obj[element].five.slice(0, 4).reduce((acc, curr) => acc + curr, 0))
-  const result = Object.keys(obj).map((key, index) => obj[key]).filter((element) => element.score !== 0)
-  return result
+  return Object.keys(obj).map((key, index) => obj[key]).filter((element) => element.score !== 0)
+
 })
 const result = arr3.map(item => {
   return item.sort((a, b) => a.score - b.score || a.five[4] - b.five[4])

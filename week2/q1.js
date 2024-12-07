@@ -1,4 +1,5 @@
 // https://www.acmicpc.net/problem/7568
+// 덩치 7568
 
 const input = require('fs').readFileSync('./dev/stdin/index.txt').toString().trim().split('\n');
 

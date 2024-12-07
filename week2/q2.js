@@ -1,4 +1,5 @@
 // https://www.acmicpc.net/problem/8979
+// 올림픽 8979
 
 const input = require('fs').readFileSync('./dev/stdin/index.txt').toString().trim().split('\n');
 const find = input[0].split(' ')[1]
@@ -32,7 +33,6 @@ const resultArr = sort.map((item) => {
     }
     if (item.gold === sort[i].gold && item.silver === sort[i].silver && item.bronze < sort[i].bronze) {
       rank++
-      continue
     }
   }
   return {...item, rank}
